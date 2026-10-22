@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>校園生活用品商品推薦網站 | 大一新生入宿專用</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎒</text></svg>">
+</head>
+<body>
+
+  <!-- 頂部導覽列 -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand-title">
+        <span>🎒 校園生活用品推薦網</span>
+        <span class="brand-badge">新生入宿版</span>
+      </div>
+      <button id="btn-nav-restart" class="btn btn-secondary" style="font-size: 0.8125rem; padding: 0.4rem 0.8rem;">
+        🔄 重新診斷
+      </button>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <!-- Hero 介紹區塊 -->
+    <section id="hero-section" class="hero-section">
+      <h1 class="hero-title">30 秒搞定你的宿舍入宿清單</h1>
+      <p class="hero-desc">專為大一住宿新生設計 · 避開買錯踩雷 · 精準預算控制 · 缺貨同級智慧替代</p>
+    </section>
+
+    <!-- 需求診斷問卷區塊 -->
+    <section id="quiz-section">
+      <div id="quiz-card" class="quiz-card">
+        <!-- 進度指示 -->
+        <div class="quiz-progress-bar-container">
+          <div class="quiz-step-indicator">
+            <span>入宿需求診斷</span>
+            <span id="step-text">第 1 / 3 題</span>
+          </div>
+          <div class="progress-track">
+            <div id="progress-fill" class="progress-fill" style="width: 33.3%;"></div>
+          </div>
+        </div>
+
+        <!-- 題目與說明 -->
+        <h2 id="question-title" class="quiz-question-title">載入中...</h2>
+        <p id="question-subtitle" class="quiz-question-subtitle"></p>
+
+        <!-- 選項列表 -->
+        <div id="options-container" class="quiz-options-group"></div>
+
+        <!-- 防呆驗證錯誤訊息 -->
+        <div id="validation-error" class="validation-error-msg">請先選擇此項以獲得最精準的推薦！</div>
+
+        <!-- 操作按鈕 -->
+        <div class="quiz-actions">
+          <button id="btn-prev" class="btn btn-secondary" disabled>← 上一題</button>
+          <button id="btn-next" class="btn btn-primary">下一題 →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 推薦結果展示區塊 -->
+    <section id="results-section" class="results-container">
+      <div class="results-header-summary">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 0.35rem;">✨ 專屬於你的大一入宿推薦清單</h2>
+          <p style="font-size: 0.875rem; color: #475569;">已依據你的預算與生活習慣完成四大生活核心類別挑選，可自由勾選微調：</p>
+        </div>
+        <div id="summary-badges" class="summary-badges"></div>
+      </div>
+
+      <!-- 四大分類推薦卡片網格 -->
+      <div id="recommendation-grid" class="recommendation-grid"></div>
+
+      <div style="text-align: center; margin-top: 1rem; margin-bottom: 3rem;">
+        <button id="btn-restart" class="btn btn-secondary">🔄 重設問卷條件，重新推薦</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- 底部浮動結算列 -->
+  <aside id="sticky-summary-bar" class="sticky-summary-bar" style="display: none;">
+    <div class="summary-bar-content">
+      <div class="summary-price-group">
+        <div class="summary-amount-row">
+          <span id="summary-count" class="summary-label">已選 4 件商品</span>
+          <span id="summary-total" class="summary-total">NT$ 0</span>
+        </div>
+        <div id="summary-status-text" class="summary-status-text">試算中...</div>
+      </div>
+      <div>
+        <button id="btn-copy-list" class="btn btn-primary">
+          📋 一鍵複製採購清單
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 複製成功的 Toast 提示 -->
+  <div id="toast-notification" class="toast-notification">
+    ✅ 採購清單已成功複製至剪貼簿！
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
